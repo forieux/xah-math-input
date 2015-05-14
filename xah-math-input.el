@@ -1,34 +1,18 @@
 ;;; xah-math-input.el --- a minor mode for input math and Unicode symbols.
 
-;; Copyright © 2010, 2011, 2012, 2013, 2014 by Xah Lee
+;; Copyright © 2010-2015 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.org/ )
-;; Created: 2010-12-08
-;; Keywords: math symbols, unicode, input
+;; Version: 2.0.1
+;; Created: 08 Dec 2010
+;; Keywords: abbrev, convenience, i18n
+;; Homepage: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
 
 ;; You can redistribute this program and/or modify it under the terms of the GNU General Public License version 2.
 
-;;; DESCRIPTION
+;;; Commentary:
 
 ;; A minor mode for inputing math symbols and Unicode symbols.
-;; For download location and documentation, see:
-;; http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
-
-;;; INSTALL
-
-;; Open the file, then type 【Alt+x eval-buffer】. That's it.
-
-;; To have emacs automatically load the file when it restarts, follow these steps:
-
-;; ① Rename the file to 〔xah-math-input.el〕 (if the file is not already that name).
-;; ② Place the file in the dir 〔~/.emacs.d/〕. On Windows, it's 〔$HOMEPATH\.emacs.d\〕. Create the 〔.emacs.d〕 folder if you don't have it.
-;; ③ Put the following lines in your emacs init file “.emacs”:
-;; (add-to-list 'load-path "~/.emacs.d/lisp/")
-;; (xah-math-input-mode 1) ; activate the mode.
-
-;; Then, restart emacs.
-
-;;; DOCUMENTATION
 
 ;; Type “inf”, then press 【Shift+Space】, then it becomes “∞”.
 ;; Other examples:
@@ -41,35 +25,37 @@
 ;; “and” ⇒ “∧”.
 ;; etc.
 
-;; For full list, call “xah-math-input-list-math-symbols”.
+;; Home page: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
 
-;; The abbreviations are based on Mathematica's aliases 【Esc abbrv Esc】 and SGML/HTML/XML char entity abbreviations.
+;;; Manual Install:
 
-;; Full documentation is at: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
+;; Open the file, then type 【Alt+x eval-buffer】. That's it.
 
-;; To see the inline documentation, call “describe-function”, then type “xah-math-input-mode”.
-;; (if you have not load the mode yet, first load it by calling “xah-math-input-mode”.)
+;; To have emacs automatically load the file when it restarts, follow these steps:
+
+;; Place the file in the dir 〔~/.emacs.d/lisp/〕. Create the folder if you don't have it.
+
+;; Put the following lines in your emacs init file:
+;; (add-to-list 'load-path "~/.emacs.d/lisp/")
+;; (xah-math-input-mode 1) ; activate the mode.
+
+;; Then, restart emacs.
 
 ;;; References
-;; 〈Math Symbols in Unicode〉 http://xahlee.info/comp/unicode_math_operators.html
+;; http://xahlee.info/comp/unicode_index.html
+;; http://xahlee.info/comp/unicode_math_operators.html
 ;; 〈How Mathematica does Unicode?〉 http://xahlee.info/math/mathematica_unicode.html
-;; http://ia.wikipedia.org/wiki/Wikipedia:LaTeX_symbols
-;; http://en.wikipedia.org/wiki/Help:Displaying_a_formula
-;; http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
 
 
 
 ;;; Code:
 
-(setq xah-math-input-version "v1.6.2")
-
 (defvar xah-math-input-abrvs nil "A abbreviation hash table that maps a string to unicode char.")
 (setq xah-math-input-abrvs (make-hash-table :test 'equal))
 
 (defun xah-math-input--add-to-hash (φpairs)
-  "add pairs to the hash table `xah-math-input-abrvs'.
+  "Add φpairs to the hash table `xah-math-input-abrvs'.
 φpairs is a sequence of pairs. Each element is a sequence of 2 items, [key, value]."
-  (interactive)
   (mapc
    (lambda (x) (puthash (elt x 0) (elt x 1) xah-math-input-abrvs))
    φpairs))
@@ -370,8 +356,6 @@
 
     ])
 
-
-
 (xah-math-input--add-to-hash
 '( ["inf" "∞"] ["empty" "∅"] ["es" "∅"] ["+-" "±"] ["-+" "∓"]))
 
@@ -523,7 +507,7 @@
    ["|_" "⦜"]
    ))
 
-(xah-math-input--add-to-hash  
+(xah-math-input--add-to-hash
  '(
    ["triangle" "▲"]
    ["tri" "▲"]
@@ -543,8 +527,7 @@
    ["<3" "♥"]
    ))
 
-
-(xah-math-input--add-to-hash  
+(xah-math-input--add-to-hash
 ;; http://xahlee.info/comp/unicode_full-width_chars.html
  '(
 
@@ -554,7 +537,7 @@
 
    ["fw@" "＠"]
 
-   ["fw^" "＾"] ["fw`" "｀"] ["fw~" "～"] ["fw_" "＿"] ["fw¯" "￣"]  
+   ["fw^" "＾"] ["fw`" "｀"] ["fw~" "～"] ["fw_" "＿"] ["fw¯" "￣"]
 
    ["fw#" "＃"] ["fw+" "＋"] ["fw-" "－"] ["fw*" "＊"] ["fw=" "＝"] ["fw<" "＜"] ["fw>" "＞"] ["fw%" "％"]
 
@@ -562,10 +545,10 @@
 
    ["fw((" "｟"] ["fw))" "｠"]
 
-   ["fw$" "＄"] ["fw£" "￡"] ["fw¢" "￠"] ["fw₩" "￦"] ["fw¥" "￥"]  
+   ["fw$" "＄"] ["fw£" "￡"] ["fw¢" "￠"] ["fw₩" "￦"] ["fw¥" "￥"]
 
    ))
-  
+
   ;; 2010-12-10. char to add
   ;; soft hyphen ­
   ;; ↥ ↧ ⇤ ⇥ ⤒ ⤓ ↨
@@ -665,26 +648,20 @@
   "Print a list of math symbols and their input abbreviations.
 See `xah-math-input-mode'."
   (interactive)
-
-  (let (mylist mylistSorted)
-    ;; get the hash table into a list
-    (setq mylist (xah-math-input--hash-to-list xah-math-input-abrvs))
-
-    ;; sort and print it out
-    (setq mylistSorted (sort mylist (lambda (a b) (string< (car a) (car b)))) )
-
-    (with-output-to-temp-buffer "*xmsi math symbol input*"
-
-      (mapc (lambda (tt) "" (interactive)
-              (princ (concat (car tt) " " (car (cdr tt)) "\n")) )
-            mylistSorted) ) ) )
+  (with-output-to-temp-buffer "*xah-math-input output*"
+    (mapc (lambda (tt)
+            (princ (concat (car tt) " " (car (cdr tt)) "\n")))
+          (sort
+           (xah-math-input--hash-to-list xah-math-input-abrvs)
+           (lambda
+             (a b)
+             (string< (car a) (car b)))))))
 
 (defvar xah-math-input-keymap nil "Keymap for xah-math-input mode.")
 
 (progn
   (setq xah-math-input-keymap (make-sparse-keymap))
-  (define-key xah-math-input-keymap (kbd "S-SPC") 'xah-math-input-change-to-symbol)
-  )
+  (define-key xah-math-input-keymap (kbd "S-SPC") 'xah-math-input-change-to-symbol))
 
 (defun xah-math-input--abbr-to-symbol (inputString)
   "Returns a char corresponding to inputString."
@@ -701,9 +678,8 @@ See `xah-math-input-mode'."
      ;; html entity hex number. e.g. 「&#x3b1;」
      ((string-match "\\`&#x\\([0-9a-fA-F]+\\);\\'" inputString) (char-to-string (string-to-number (match-string 1 inputString) 16)))
      ;; unicode full name. e.g. 「GREEK SMALL LETTER ALPHA」
-     ((and (string-match "\\`\\([- a-zA-Z0-9]+\\)\\'" inputString) (setq charByNameResult (assoc-string inputString (ucs-names) t) )) (char-to-string (cdr charByNameResult)))
-     (t nil) )
-     ) )
+     ((and (string-match "\\`\\([- a-zA-Z0-9]+\\)\\'" inputString) (setq charByNameResult (assoc-string inputString (ucs-names) t))) (char-to-string (cdr charByNameResult)))
+     (t nil))))
 
 (defun xah-math-input-change-to-symbol (&optional print-message-when-no-match)
   "Change text selection or word to the left of cursor into a Unicode character.
@@ -726,34 +702,34 @@ See also: `xah-math-input-mode'."
   (interactive "P")
   (let (p1 p2 inputStr resultSymbol)
     (if (region-active-p)
-        ;; if there's a text selection, then use that as input.
         (progn
           (setq p1 (region-beginning))
           (setq p2 (region-end))
           (setq inputStr (buffer-substring-no-properties p1 p2))
           (setq resultSymbol (xah-math-input--abbr-to-symbol inputStr))
           (when resultSymbol (progn (delete-region p1 p2) (insert resultSymbol))))
-
       ;; if there's no text selection, grab all chars to the left of cursor point up to whitespace, try each string until there a valid abbrev found or none char left.
       (progn
         (setq p2 (point))
-        (skip-chars-backward "^ \t\n" -10)
+        (skip-chars-backward "^ \t\n" -20)
         (setq p1 (point))
         (while (and (not resultSymbol) (>= (- p2 p1) 1))
           (setq inputStr (buffer-substring-no-properties p1 p2))
           (setq resultSymbol (xah-math-input--abbr-to-symbol inputStr))
           (when resultSymbol (progn (goto-char p2) (delete-region p1 p2) (insert resultSymbol)))
           (setq p1 (1+ p1)))))
-
     (when (not resultSymbol)
-      (when print-message-when-no-match (xah-math-input-list-math-symbols) (error "「%s」 is not a valid abbrevation or input. Call “xah-math-input-list-math-symbols” for a list. Or use a decimal e.g. 「945」 or hexadecimal e.g. 「x3b1」, or full Unicode name e.g. 「greek small letter alpha」."  inputStr)))))
+      (when print-message-when-no-match (xah-math-input-list-math-symbols)
+            (user-error "「%s」 no match found for that abbrev/input. Call “xah-math-input-list-math-symbols” for a list. Or use a decimal e.g. 「945」 or hexadecimal e.g. 「x3b1」, or full Unicode name e.g. 「greek small letter alpha」."  inputStr)))))
 
+;;;###autoload
 (define-minor-mode xah-math-input-mode
-  "Toggle math symbol input (minor) mode.
+  "Toggle xah-math-input minor mode.
 
 A mode for inputting a math and Unicode symbols.
 
-Type “inf”, then press 【Shift+Space】, then it becomes “∞”.
+Type “inf”, then press \\[xah-math-input-change-to-symbol], then it becomes “∞”.
+
 Other examples:
  a ⇒ α
  p ⇒ π
@@ -764,12 +740,9 @@ Other examples:
  and ⇒ ∧
 etc.
 
-If you have a text selection, then selected word will be taken as
-input. For example, type 「sin(a)」, select the “a”, then press
- 【Shift+Space】, then it becomse 「sin(α)」.
+If you have a text selection, then selected word will be taken as input. For example, type 「extraterrestrial alien」, select the phrase, then press 【Shift+Space】, then it becomse 「👽」.
 
 For the complete list of abbrevs, call `xah-math-input-list-math-symbols'.
-All XML char entity abbrevs are supported. For example, 「copy」 ⇒ 「©」.
 
 Decimal and hexadecimal can also be used. Example:
 
@@ -790,15 +763,6 @@ as a wildcard to find the char. For example, call
 all unicode char names that has “arrow” in it. (this feature is
 part of Emacs 23)
 
-• to change the activation key, put this in your init:
- \(require 'xah-math-input)
- \(define-key xah-math-input-keymap (kbd \"S-SPC\") nil) ; unset Shift+space
- \(define-key xah-math-input-keymap (kbd \"<f12>\") 'xah-math-input-change-to-symbol)
-
-• to add a abbrev, put this in your init:
- \(require 'xah-math-input)
- \(puthash \"floral\" \"❦\" xah-math-input-abrvs)
-
 Home page at: URL `http://ergoemacs.org/emacs/xah-math-input-math-symbols-input.html'"
   nil
   :global t
@@ -807,3 +771,5 @@ Home page at: URL `http://ergoemacs.org/emacs/xah-math-input-math-symbols-input.
   )
 
 (provide 'xah-math-input)
+
+;;; xah-math-input.el ends here
