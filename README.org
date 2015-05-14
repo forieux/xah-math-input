@@ -1,0 +1,3 @@
+A emacs minor mode for inputing math symbols and Unicode symbols.
+
+Home Page: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
