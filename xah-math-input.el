@@ -1,12 +1,16 @@
-;;; xah-math-input.el --- a minor mode for input math and Unicode symbols.
+;;; xah-math-input.el --- a minor mode for inputting math and Unicode symbols.
 
 ;; Copyright © 2010-2015 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.org/ )
 ;; Version: 2.0.1
 ;; Created: 08 Dec 2010
-;; Keywords: abbrev, convenience, i18n
-;; Homepage: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
+;; Keywords: abbrev, convenience, unicode, math, LaTex
+;; URL: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
+
+;; This file is not part of GNU Emacs.
+
+;;; License:
 
 ;; You can redistribute this program and/or modify it under the terms of the GNU General Public License version 2.
 
@@ -14,7 +18,9 @@
 
 ;; A minor mode for inputing math symbols and Unicode symbols.
 
-;; Type “inf”, then press 【Shift+Space】, then it becomes “∞”.
+;; Call xah-math-input-mode to toggle on/off.
+
+;; Type “inf”, then press 【Shift+Space】 `xah-math-input-change-to-symbol', then it becomes “∞”.
 ;; Other examples:
 ;; “a” ⇒ “α”.
 ;; “p” ⇒ “π”.
@@ -25,12 +31,15 @@
 ;; “and” ⇒ “∧”.
 ;; etc.
 
+;; Call `xah-math-input-list-math-symbols' to see all abbrevs.
+
 ;; Home page: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
 
-;;; Manual Install:
+;;; Install:
 
 ;; Open the file, then type 【Alt+x eval-buffer】. That's it.
 
+;; Manual install.
 ;; To have emacs automatically load the file when it restarts, follow these steps:
 
 ;; Place the file in the dir 〔~/.emacs.d/lisp/〕. Create the folder if you don't have it.
@@ -39,9 +48,7 @@
 ;; (add-to-list 'load-path "~/.emacs.d/lisp/")
 ;; (xah-math-input-mode 1) ; activate the mode.
 
-;; Then, restart emacs.
-
-;;; References
+;; References
 ;; http://xahlee.info/comp/unicode_index.html
 ;; http://xahlee.info/comp/unicode_math_operators.html
 ;; 〈How Mathematica does Unicode?〉 http://xahlee.info/math/mathematica_unicode.html
@@ -719,8 +726,9 @@ See also: `xah-math-input-mode'."
           (when resultSymbol (progn (goto-char p2) (delete-region p1 p2) (insert resultSymbol)))
           (setq p1 (1+ p1)))))
     (when (not resultSymbol)
-      (when print-message-when-no-match (xah-math-input-list-math-symbols)
-            (user-error "「%s」 no match found for that abbrev/input. Call “xah-math-input-list-math-symbols” for a list. Or use a decimal e.g. 「945」 or hexadecimal e.g. 「x3b1」, or full Unicode name e.g. 「greek small letter alpha」."  inputStr)))))
+      (when print-message-when-no-match
+        (xah-math-input-list-math-symbols)
+        (user-error "「%s」 no match found for that abbrev/input. Call “xah-math-input-list-math-symbols” for a list. Or use a decimal e.g. 「945」 or hexadecimal e.g. 「x3b1」, or full Unicode name e.g. 「greek small letter alpha」."  inputStr)))))
 
 ;;;###autoload
 (define-minor-mode xah-math-input-mode
