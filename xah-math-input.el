@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2015 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.org/ )
-;; Version: 2.0.1
+;; Version: 2.0.3
 ;; Created: 08 Dec 2010
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
 ;; URL: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
@@ -68,7 +68,7 @@
    φpairs))
 
 (xah-math-input--add-to-hash
-;; xml entities http://xahlee.info/comp/unicode_html_entities.html
+ ;; xml entities http://xahlee.info/comp/unicode_html_entities.html
  [
   [ "nbsp" " " ]
   [ "bull" "•" ]
@@ -139,8 +139,8 @@
 
   ["larr" "←"] ["uarr" "↑"] ["rarr" "→"] ["darr" "↓"] ["harr" "↔"] ["crarr" "↵"] ["lArr" "⇐"] ["uArr" "⇑"] ["rArr" "⇒"] ["dArr" "⇓"] ["hArr" "⇔"]
 
-  ["times" "×"] ["divide" "÷"] ["minus" "−"] ["oplus" "⊕"] ["otimes" "⊗"] ["lowast" "∗"] ["radic" "√"]
-
+  ["times" "×"] ["divide" "÷"] ["minus" "−"] ["lowast" "∗"] ["radic" "√"]
+  ["oplus" "⊕"] ["otimes" "⊗"]
   ["oslash" "ø"]
   ["fnof" "ƒ"]
   ["circ" "ˆ"]
@@ -286,6 +286,7 @@
 
   ["smile" "☺"]
   [":)" "☺"]
+  [":P" "😋"]
   [":(" "☹"]
   [";-)" "😉"]
   [";)" "😉"]
@@ -487,8 +488,11 @@
 (xah-math-input--add-to-hash
  '(
    ;; operators
+
    ["c+" "⊕"]
    ["c*" "⊗"]
+   ["c-" "⊖"]
+   ["c/" "⊘"]
    ["'" "′"]
    ["''" "″"]
    ["'''" "‴"]
@@ -578,8 +582,8 @@
 
 ;; cycle brackets
 (xah-math-input--add-cycle ["〘〙" "〔〕"])
-(xah-math-input--add-cycle ["«»" "《》"])
-(xah-math-input--add-cycle ["‹›" "〈〉"])
+(xah-math-input--add-cycle ["〈〉" "《》"])
+(xah-math-input--add-cycle ["‹›" "«»"])
 (xah-math-input--add-cycle ["【】" "〖〗"])
 (xah-math-input--add-cycle ["「」" "『』"])
 
@@ -779,5 +783,9 @@ Home page at: URL `http://ergoemacs.org/emacs/xah-math-input-math-symbols-input.
   )
 
 (provide 'xah-math-input)
+
+;; Local Variables:
+;; coding: utf-8
+;; End:
 
 ;;; xah-math-input.el ends here
