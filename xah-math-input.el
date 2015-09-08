@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2015 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.org/ )
-;; Version: 2.0.3
+;; Version: 2.0.4
 ;; Created: 08 Dec 2010
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
 ;; URL: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
@@ -636,7 +636,7 @@
 (xah-math-input--add-cycle ["*" "•" "×"]) ; bullet, multiply, times
 
 (xah-math-input--add-cycle ["," "，"])
-(xah-math-input--add-cycle ["·" "．" "。"])      ; MIDDLE DOT, FULLWIDTH FULL STOP, IDEOGRAPHIC FULL STOP
+(xah-math-input--add-cycle ["·" "。"])      ; MIDDLE DOT, IDEOGRAPHIC FULL STOP
 (xah-math-input--add-cycle [":" "："])    ; FULLWIDTH COLON
 (xah-math-input--add-cycle [";" "；"])
 (xah-math-input--add-cycle ["!" "！" "¡" "‼" "❕"])
