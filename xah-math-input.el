@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2015 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.org/ )
-;; Version: 2.0.4
+;; Version: 2.0.5
 ;; Created: 08 Dec 2010
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
 ;; URL: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
@@ -24,7 +24,7 @@
 ;; Other examples:
 ;; “a” ⇒ “α”.
 ;; “p” ⇒ “π”.
-;; “!=” ⇒ “≠”.
+;; “/=” ⇒ “≠”.
 ;; “>=” ⇒ “≥”.
 ;; “=>” ⇒ “⇒”.
 ;; “->” ⇒ “→”.
@@ -461,7 +461,8 @@
    ["~" "≈"]
    [":=" "≔"]
    ["=:" "≕"]
-   ["!=" "≠"] ["notequal" "≠"]
+   ["!=" "≠"]
+
    ["fa" "∀"] ["forall" "∀"]
    ["ex" "∃"]
    ["tack" "⊢"]
@@ -745,7 +746,7 @@ Type “inf”, then press \\[xah-math-input-change-to-symbol], then it becomes 
 Other examples:
  a ⇒ α
  p ⇒ π
- != ⇒ ≠
+ /= ⇒ ≠
  >= ⇒ ≥
  => ⇒ ⇒
  -> ⇒ →
