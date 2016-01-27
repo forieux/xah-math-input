@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2015 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.org/ )
-;; Version: 2.0.5
+;; Version: 2.1.5
 ;; Created: 08 Dec 2010
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
 ;; URL: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
@@ -284,13 +284,25 @@
   ["!?" "⁉"]
   ["!!" "‼"]
 
+  ["^_^" "😄"]
+  ["^_^'" "😅"]
+  [">_<" "😆"]
+  ["¬_¬" "😒"]
+
+  [":o" "😮"]
+  [":O" "😲"]
+
   ["smile" "☺"]
   [":)" "☺"]
+  [":D" "☺"]
+  [":/" "😕"]
+
   [":P" "😋"]
   [":(" "☹"]
-  [";-)" "😉"]
   [";)" "😉"]
+
   ["wink" "😉"]
+  ["cry" "😢"]
   ["sad" "☹"]
   ["good" "👍"]
   ["bad" "👎"]
