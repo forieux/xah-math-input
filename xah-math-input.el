@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2015 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.org/ )
-;; Version: 2.1.5
+;; Version: 2.1.6
 ;; Created: 08 Dec 2010
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
 ;; URL: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
@@ -122,12 +122,15 @@
   ["lsaquo" "‹"] ["rsaquo" "›"]
 
   ["dagger" "†"]
-  ["Dagger" "‡"]
+  ["dagger2" "‡"]
   ["hellip" "…"]
   ["permil" "‰"]
 
   ["prime" "′"]
-  ["Prime" "″"]
+  ["prime" "′"]
+  ["prime2" "″"]
+  ["foot" "′"]
+  ["inch" "″"]
 
   ["oline" "‾"]
 
@@ -283,11 +286,14 @@
   ["?!" "⁈"]
   ["!?" "⁉"]
   ["!!" "‼"]
+  ["no" "№"]
+  ["No" "№"]
 
   ["^_^" "😄"]
   ["^_^'" "😅"]
   [">_<" "😆"]
   ["¬_¬" "😒"]
+  ["meh" "😒"]
 
   [":o" "😮"]
   [":O" "😲"]
@@ -581,15 +587,15 @@
   "DOCSTRING"
   (let (
         (ll (- (length cycleList) 1) )
-        (ξi 0)
+        (ii 0)
         )
-    (while (< ξi ll)
+    (while (< ii ll)
       (let (
-            (charThis (elt cycleList ξi ))
-            (charNext (elt cycleList (+ ξi 1) ))
+            (charThis (elt cycleList ii ))
+            (charNext (elt cycleList (+ ii 1) ))
             )
         (puthash charThis charNext xah-math-input-abrvs)
-        (setq ξi (1+ ξi) ) ) )
+        (setq ii (1+ ii) ) ) )
     (puthash (elt cycleList ll) (elt cycleList 0) xah-math-input-abrvs)
     ))
 
