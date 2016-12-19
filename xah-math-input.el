@@ -1,10 +1,11 @@
-;;; xah-math-input.el --- a minor mode for inputting math and Unicode symbols.
+;;; xah-math-input.el --- a minor mode for inputting math and Unicode symbols. -*- coding: utf-8; lexical-binding: t; -*-
 
-;; Copyright © 2010-2015 by Xah Lee
+;; Copyright © 2010-2016 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.2.0
+;; Version: 2.2.1
 ;; Created: 08 Dec 2010
+;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
 ;; URL: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
 
@@ -825,9 +826,5 @@ Home page at: URL `http://ergoemacs.org/emacs/xah-math-input-math-symbols-input.
   )
 
 (provide 'xah-math-input)
-
-;; Local Variables:
-;; coding: utf-8
-;; End:
 
 ;;; xah-math-input.el ends here
