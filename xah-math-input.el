@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2016 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.2.1
+;; Version: 2.2.2
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
@@ -119,7 +119,7 @@
 
   ["Alpha" "Α"] ["Beta" "Β"] ["Gamma" "Γ"] ["Delta" "Δ"] ["Epsilon" "Ε"] ["Zeta" "Ζ"] ["Eta" "Η"] ["Theta" "Θ"] ["Iota" "Ι"] ["Kappa" "Κ"] ["Lambda" "Λ"] ["Mu" "Μ"] ["Nu" "Ν"] ["Xi" "Ξ"] ["Omicron" "Ο"] ["Pi" "Π"] ["Rho" "Ρ"] ["Sigma" "Σ"] ["Tau" "Τ"] ["Upsilon" "Υ"] ["Phi" "Φ"] ["Chi" "Χ"] ["Psi" "Ψ"] ["Omega" "Ω"]
 
-  ["alpha" "α"] ["beta" "β"] ["gamma" "γ"] ["delta" "δ"] ["epsilon" "ε"] ["zeta" "ζ"] ["eta" "η"] ["theta" "θ"] ["iota" "ι"] ["kappa" "κ"] ["lambda" "λ"] ["mu" "μ"] ["nu" "ν"] ["xi" "ξ"] ["omicron" "ο"] ["pi" "π"] ["rho" "ρ"] ["sigmaf" "ς"] ["sigma" "σ"] ["tau" "τ"] ["upsilon" "υ"] ["phi" "φ"] ["chi" "χ"] ["psi" "ψ"] ["omega" "ω"] ["thetasym" "ϑ"] ["upsih" "ϒ"] ["piv" "ϖ"]
+  ["alpha" "α"] ["beta" "β"] ["gamma" "γ"] ["delta" "δ"] ["epsilon" "ε"] ["zeta" "ζ"] ["eta" "η"] ["theta" "θ"] ["iota" "ι"] ["kappa" "κ"] ["lambda" "λ"] ["mu" "μ"] ["nu" "ν"] ["xi" "ξ"] ["omicron" "ο"] ["pi" "π"] ["rho" "ρ"] ["sigmaf" "ς"] ["sigma" "σ"] ["tau" "τ"] ["upsilon" "υ"] ["phi" "φ"] ["chi" "χ"] ["psi" "ψ"] ["omega" "ω"] ["theta2" "ϑ"] ["upsih" "ϒ"] ["piv" "ϖ"]
 
   ["ndash" "–"] ["mdash" "—"]
 
@@ -639,6 +639,8 @@
 (xah-math-input--add-cycle ["—"  "―" ])
 
 (xah-math-input--add-cycle ["#" "♯" "№"])
+
+(xah-math-input--add-cycle ["θ" "ϑ"])
 
 ;; cycle black white chars
 (xah-math-input--add-cycle ["■" "□"])
