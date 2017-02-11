@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2016 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.2.2
+;; Version: 2.2.3
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
@@ -52,6 +52,7 @@
 
 ;; Put the following lines in your emacs init file:
 ;; (add-to-list 'load-path "~/.emacs.d/lisp/")
+;; (require 'xah-math-input)
 ;; (global-xah-math-input-mode 1) ; activate the mode globally
 
 ;; References
@@ -194,7 +195,7 @@
 
   ["dd" "ⅆ"] ["ee" "ⅇ"] ["ii" "ⅈ"] ["jj" "ⅉ"]
 
-  ["natural" "ℕ"] ["integer" "ℤ"] ["rational" "ℚ"] ["real" "ℝ"] ["complex" "ℂ"] ["quaternion" "ℍ"] ["sedenion" "𝕊"]
+  ["nat" "ℕ"] ["integer" "ℤ"] ["rational" "ℚ"] ["real" "ℝ"] ["complex" "ℂ"] ["quaternion" "ℍ"] ["sedenion" "𝕊"]
 
   ])
 
