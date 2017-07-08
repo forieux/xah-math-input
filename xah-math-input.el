@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2016 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.2.3
+;; Version: 2.2.4
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
@@ -824,7 +824,7 @@ part of Emacs 23)
 Home page at: URL `http://ergoemacs.org/emacs/xah-math-input-math-symbols-input.html'"
   nil
   :global nil
-  :lighter " ∑"
+  :lighter " ∑∞"
   :keymap xah-math-input-keymap
   )
 
