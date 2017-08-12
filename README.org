@@ -3,3 +3,11 @@ A emacs minor mode for inputing math symbols and Unicode symbols.
 [[http://melpa.org/#/xah-math-input][file:http://melpa.org/packages/xah-math-input-badge.svg]]
 
 Home Page: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
+
+Put in 5 bucks in my patreon.
+https://www.patreon.com/xahlee
+
+or http://paypal.com
+pay to xah@xahlee.org
+
+Thanks.
