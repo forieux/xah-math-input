@@ -13,7 +13,7 @@
 
 ;;; License:
 
-;; You can redistribute this program and/or modify it under the terms of the GNU General Public License version 2.
+;; You can redistribute this program and/or modify it under the terms of the GNU General Public License version 3.
 
 ;;; Commentary:
 
@@ -188,6 +188,18 @@
  )
 
 (xah-math-input--add-to-hash
+ ;; http://xahlee.info/math/math_unicode_greek.html
+ '(
+
+   ["a" "α"] ["b" "β"] ["g" "γ"] ["d" "δ"] ["e" "ε"] ["z" "ζ"] ["h" "η"] ["q" "θ"] ["i" "ι"] ["k" "κ"] ["l" "λ"] ["m" "μ"] ["n" "ν"] ["x" "ξ"] ["p" "π"] ["r" "ρ"] ["s" "σ"] ["t" "τ"] ["v" "υ"] ["f" "φ"] ["c" "χ"] ["y" "ψ"] ["o" "ω"]
+
+   ["A" "Α"] ["B" "Β"] ["G" "Γ"] ["D" "Δ"] ["E" "Ε"] ["Z" "Ζ"] ["H" "Η"] ["Q" "Θ"] ["I" "Ι"] ["K" "Κ"] ["L" "Λ"] ["M" "Μ"] ["N" "Ν"] ["X" "Ξ"] ["P" "Π"] ["R" "Ρ"] ["S" "Σ"] ["T" "Τ"] ["V" "Υ"] ["F" "Φ"] ["C" "Χ"] ["Y" "Ψ"] ["O" "Ω"]
+
+;; omicron in entities section, need full name
+
+   ))
+
+(xah-math-input--add-to-hash
  ;; Gothic, Double Struck http://xahlee.info/math/math_font_unicode.html
  [
 
@@ -195,7 +207,18 @@
 
   ["dd" "ⅆ"] ["ee" "ⅇ"] ["ii" "ⅈ"] ["jj" "ⅉ"]
 
-  ["nat" "ℕ"] ["integer" "ℤ"] ["rational" "ℚ"] ["real" "ℝ"] ["complex" "ℂ"] ["quaternion" "ℍ"] ["sedenion" "𝕊"]
+  ["N" "ℕ"]
+  ["integer" "ℤ"]
+  ["int" "ℤ"]
+  ["rational" "ℚ"]
+  ["Q" "ℚ"]
+  ["real" "ℝ"]
+  ["R" "ℝ"]
+  ["C" "ℂ"]
+  ["quaternion" "ℍ"]
+  ["H" "ℍ"]
+  ["sedenion" "𝕊"]
+  ["S" "𝕊"]
 
   ])
 
@@ -448,18 +471,6 @@
 
 ;; http://xahlee.info/comp/unicode_music_symbols.html
 (xah-math-input--add-to-hash  '( ["music" "🎶"] ["n4" "♩"] ["n8" "♪"] ["n8d" "♫"] ["n16d" "♬"] ["flat" "♭"] ["natural" "♮"] ["sharp" "♯"]))
-
-(xah-math-input--add-to-hash
- ;; http://xahlee.info/math/math_unicode_greek.html
- '(
-
-   ["a" "α"] ["b" "β"] ["g" "γ"] ["d" "δ"] ["e" "ε"] ["z" "ζ"] ["h" "η"] ["q" "θ"] ["i" "ι"] ["k" "κ"] ["l" "λ"] ["m" "μ"] ["n" "ν"] ["x" "ξ"] ["p" "π"] ["r" "ρ"] ["s" "σ"] ["t" "τ"] ["v" "υ"] ["f" "φ"] ["c" "χ"] ["y" "ψ"] ["o" "ω"]
-
-   ["A" "Α"] ["B" "Β"] ["G" "Γ"] ["D" "Δ"] ["E" "Ε"] ["Z" "Ζ"] ["H" "Η"] ["Q" "Θ"] ["I" "Ι"] ["K" "Κ"] ["L" "Λ"] ["M" "Μ"] ["N" "Ν"] ["X" "Ξ"] ["P" "Π"] ["R" "Ρ"] ["S" "Σ"] ["T" "Τ"] ["V" "Υ"] ["F" "Φ"] ["C" "Χ"] ["Y" "Ψ"] ["O" "Ω"]
-
-;; omicron in entities section, need full name
-
-   ))
 
 (xah-math-input--add-to-hash
  '(
