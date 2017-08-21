@@ -7,13 +7,10 @@
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
+;; License: GPL v3
 ;; URL: http://ergoemacs.org/emacs/xmsi-math-symbols-input.html
 
 ;; This file is not part of GNU Emacs.
-
-;;; License:
-
-;; You can redistribute this program and/or modify it under the terms of the GNU General Public License version 3.
 
 ;;; Commentary:
 
