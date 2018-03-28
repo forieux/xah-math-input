@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2018 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.4.20180318
+;; Version: 2.5.20180328
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
@@ -360,31 +360,21 @@
 
   ["cmd" "⌘"] ["opt" "⌥"] ["alt" "⎇"] ["ctrl" "✲"] ["helm" "⎈"]
   ["caret" "‸"] ["menu" "▤"] ["shift" "⇧"]
-
   ["enter" "⌤"]
   ["return" "⏎"]
-
   ["pgup" "⇞"] ["pgdn" "⇟"] ["prevpage" "⎗"] ["nextpage" "⎘"] ["home" "↖"] ["end" "↘"]
-
   ["esc" "⎋"]
   ["eject" "⏏"]
-
   ["undo" "⎌"] ["redo" "↷"]
-
   ["backspace" "⌫"]
   ["delete" "⌦"]
-
   ["space" "␣"]
-
   ["tab" "↹"] ["tabl" "⇤"] ["tabr" "⇥"] ["|<-" "⇤"] ["->|" "⇥"] ["lrarr" "⇄"]
-
   ["sleep" "☾"]
   ["break" "⎊"]
   ["pause" "⎉"]
   ["print" "⎙"]
-
   ["keyboard" "⌨"]
-
   ["clear" "⌧"]
   ["cursor" "▮"]
   ["ibeam" "⌶"]
@@ -482,7 +472,7 @@
    ["fn" "ƒ"]))
 
 (xah-math-input--add-to-hash
-   ;; relations http://xahlee.info/comp/unicode_math_operators.html
+   ;; relations ;; http://xahlee.info/comp/unicode_math_operators.html
  '(
    ["<" "≺"]
    [">" "≻"]
@@ -523,13 +513,9 @@
  '(
 
    ["<-" "←"] ["->" "→"] ["<->" "↔"] ["!<-" "↚"] ["!->" "↛"] ["!<->" "↮"]
-
    ["≤" "⇐"] ["=>" "⇒"] ["<=>" "⇔"] ["!<=" "⇍"] ["!=>" "⇏"] ["!<=>" "⇎"]
-
    ["<==" "⟸"] ["==>" "⟹"] ["<==>" "⟺"]
-
    ["<-|" "↤"] ["|->" "↦"]
-
    ["<--" "⟵"] ["-->" "⟶"] ["<-->" "⟷"]
 
    ))
@@ -537,7 +523,7 @@
 (xah-math-input--add-to-hash
  '(
    ;; operators
-
+   ["cp" "∘"]
    ["c+" "⊕"]
    ["c*" "⊗"]
    ["c-" "⊖"]
