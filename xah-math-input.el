@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2018 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.7.20181224223239
+;; Version: 2.7.20190206085801
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
@@ -320,6 +320,7 @@
   ["No" "№"]
 
   ["obj" "￼"]
+  ["tv" "📺"]
 
   [":o" "😮"]
   [":O" "😲"]
@@ -336,11 +337,22 @@
   ["wink" "😉"]
   ["cry" "😢"]
   ["sad" "☹"]
-  ["good" "👍"]
-  ["bad" "👎"]
+
+  ["thumbup" "👍"]
+  ["thumbdown" "👎"]
   ["ok" "👌"]
   ["fist" "👊"]
-  ["tv" "📺"]])
+  ["victory" "✌"]
+  ["fuckyou" "🖕"]
+  ["vulcan" "🖖"]
+  ["handshake" "🤝"]
+  ["clap" "👏"]
+  ["callme" "🤙"]
+
+  ;;
+  ]
+
+ )
 
 (xah-math-input--add-to-hash
  ;; http://xahlee.info/comp/unicode_units.html
