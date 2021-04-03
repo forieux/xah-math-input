@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2020 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.7.20200216233900
+;; Version: 2.8.20210403161148
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
