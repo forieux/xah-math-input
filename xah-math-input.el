@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2020 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.8.20210403161148
+;; Version: 2.8.20210419112545
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
@@ -873,39 +873,30 @@ Version 2018-07-09"
 ;;;###autoload
 (define-minor-mode xah-math-input-mode
   "Toggle xah-math-input minor mode.
-
 A mode for inputting a math and Unicode symbols.
-
 Type “inf”, then press \\[xah-math-input-change-to-symbol] (or M-x `xah-math-input-change-to-symbol'), then it becomes “∞”.
-
 Other examples:
  a → α
  p → π
- /= → ≠ or ne
- >= → ≥ or ge
- -> → → or rarr
+ ne → ≠
+ ge → ≥
+ rarr → → or ->
  and → ∧
-etc.
-
-If you have a text selection, then selected word will be taken as input. For example, type 「extraterrestrial alien」, select the phrase, then press \\[xah-math-input-change-to-symbol], then it becomse 👽.
+If you have a text selection, then selected word will be taken as input.
 
 For the complete list of abbrevs, call `xah-math-input-list-math-symbols'.
 
 Decimal and hexadecimal can also be used. Example:
-
  945     ← decimal
  #945    ← decimal with prefix #
  &#945;  ← XML entity syntax
-
  x3b1    ← hexadimal with prefix x
  #x3b1   ← hexadimal with prefix #x
  &#x3b1; ← XML entity syntax
 
-Full Unicode name can also be used, e.g. 「greek small letter alpha」.
-
 If you wish to enter a symbor by full unicode name but do not know the full name, M-x `insert'. Asterisk “*” can be used as a wildcard to find the char. For example, M-x `insert' , then type 「*arrow」 then Tab, then emacs will list all unicode char names that has “arrow” in it. (this feature is part of Emacs 23)
 
-Home page at: URL `http://ergoemacs.org/emacs/xah-math-input-math-symbols-input.html'"
+Home page at: URL `http://ergoemacs.org/emacs/xmsi-math-symbols-input.html'"
   nil
   :global nil
   :lighter " ∑α"
