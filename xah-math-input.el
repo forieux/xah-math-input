@@ -3,7 +3,7 @@
 ;; Copyright © 2010-2020 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.8.20210419112545
+;; Version: 2.8.20210814191116
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
@@ -779,27 +779,27 @@ See `xah-math-input-mode'."
   (setq xah-math-input-keymap (make-sparse-keymap))
   (define-key xah-math-input-keymap (kbd "S-SPC") 'xah-math-input-change-to-symbol))
 
-(defun xah-math-input--abbr-to-symbol (@inputStr)
-  "Returns a char corresponding to @inputStr.
+(defun xah-math-input--abbr-to-symbol (@str)
+  "Returns a char corresponding to @str.
 If none found, return nil.
-Version 2018-02-16"
+Version 2018-02-16 2021-08-14"
   (let ($resultChar $charByNameResult)
-    (setq $resultChar (gethash @inputStr xah-math-input-abrvs))
+    (setq $resultChar (gethash @str xah-math-input-abrvs))
     (cond
      ($resultChar $resultChar)
      ;; begin with u+
-     ((string-match "\\`u\\+\\([0-9a-fA-F]+\\)\\'" @inputStr) (char-to-string (string-to-number (match-string 1 @inputStr) 16)))
+     ((string-match "\\`u\\+\\([0-9a-fA-F]+\\)\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str) 16)))
      ;; decimal. 「945」 or 「#945」
-     ((string-match "\\`#?\\([0-9]+\\)\\'" @inputStr) (char-to-string (string-to-number (match-string 1 @inputStr))))
+     ((string-match "\\`#?\\([0-9]+\\)\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str))))
      ;; e.g. decimal with html entity markup. 「&#945;」
-     ((string-match "\\`&#\\([0-9]+\\);\\'" @inputStr) (char-to-string (string-to-number (match-string 1 @inputStr))))
+     ((string-match "\\`&#\\([0-9]+\\);\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str))))
      ;; hex number. e.g. 「x3b1」 or 「#x3b1」
-     ((string-match "\\`#?x\\([0-9a-fA-F]+\\)\\'" @inputStr) (char-to-string (string-to-number (match-string 1 @inputStr) 16)))
+     ((string-match "\\`#?x\\([0-9a-fA-F]+\\)\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str) 16)))
      ;; html entity hex number. e.g. 「&#x3b1;」
-     ((string-match "\\`&#x\\([0-9a-fA-F]+\\);\\'" @inputStr) (char-to-string (string-to-number (match-string 1 @inputStr) 16)))
+     ((string-match "\\`&#x\\([0-9a-fA-F]+\\);\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str) 16)))
      ;; unicode full name. e.g. 「GREEK SMALL LETTER ALPHA」
-     ((and (string-match "\\`\\([- a-zA-Z0-9]+\\)\\'" @inputStr)
-           (setq $charByNameResult (xah-math-input--name-to-codepoint @inputStr)))
+     ((and (string-match "\\`\\([- a-zA-Z0-9]+\\)\\'" @str)
+           (setq $charByNameResult (xah-math-input--name-to-codepoint @str)))
       (char-to-string $charByNameResult))
      (t nil))))
 
