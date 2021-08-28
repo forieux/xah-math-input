@@ -1,9 +1,9 @@
 ;;; xah-math-input.el --- a minor mode for inputting math and Unicode symbols. -*- coding: utf-8; lexical-binding: t; -*-
 
-;; Copyright © 2010-2020 by Xah Lee
+;; Copyright © 2010-2021 by Xah Lee
 
 ;; Author: Xah Lee ( http://xahlee.info/ )
-;; Version: 2.8.20210814191116
+;; Version: 2.8.20210828120435
 ;; Created: 08 Dec 2010
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: abbrev, convenience, unicode, math, LaTex
@@ -65,12 +65,12 @@
 (defvar xah-math-input-abrvs nil "A abbreviation hash table that maps a string to unicode char.")
 (setq xah-math-input-abrvs (make-hash-table :test 'equal))
 
-(defun xah-math-input--add-to-hash (@pairs)
-  "Add @pairs to the hash table `xah-math-input-abrvs'.
-@pairs is a sequence of pairs. Each element is a sequence of 2 items, [key, value]."
+(defun xah-math-input--add-to-hash (Pairs)
+  "Add Pairs to the hash table `xah-math-input-abrvs'.
+Pairs is a sequence of pairs. Each element is a sequence of 2 items, [key, value]."
   (mapc
    (lambda (x) (puthash (elt x 0) (elt x 1) xah-math-input-abrvs))
-   @pairs))
+   Pairs))
 
 (xah-math-input--add-to-hash
  ;; xml entities http://xahlee.info/js/html_xml_entities.html
@@ -779,37 +779,37 @@ See `xah-math-input-mode'."
   (setq xah-math-input-keymap (make-sparse-keymap))
   (define-key xah-math-input-keymap (kbd "S-SPC") 'xah-math-input-change-to-symbol))
 
-(defun xah-math-input--abbr-to-symbol (@str)
-  "Returns a char corresponding to @str.
+(defun xah-math-input--abbr-to-symbol (Str)
+  "Returns a char corresponding to Str.
 If none found, return nil.
 Version 2018-02-16 2021-08-14"
   (let ($resultChar $charByNameResult)
-    (setq $resultChar (gethash @str xah-math-input-abrvs))
+    (setq $resultChar (gethash Str xah-math-input-abrvs))
     (cond
      ($resultChar $resultChar)
      ;; begin with u+
-     ((string-match "\\`u\\+\\([0-9a-fA-F]+\\)\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str) 16)))
+     ((string-match "\\`u\\+\\([0-9a-fA-F]+\\)\\'" Str) (char-to-string (string-to-number (match-string-no-properties 1 Str) 16)))
      ;; decimal. 「945」 or 「#945」
-     ((string-match "\\`#?\\([0-9]+\\)\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str))))
+     ((string-match "\\`#?\\([0-9]+\\)\\'" Str) (char-to-string (string-to-number (match-string-no-properties 1 Str))))
      ;; e.g. decimal with html entity markup. 「&#945;」
-     ((string-match "\\`&#\\([0-9]+\\);\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str))))
+     ((string-match "\\`&#\\([0-9]+\\);\\'" Str) (char-to-string (string-to-number (match-string-no-properties 1 Str))))
      ;; hex number. e.g. 「x3b1」 or 「#x3b1」
-     ((string-match "\\`#?x\\([0-9a-fA-F]+\\)\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str) 16)))
+     ((string-match "\\`#?x\\([0-9a-fA-F]+\\)\\'" Str) (char-to-string (string-to-number (match-string-no-properties 1 Str) 16)))
      ;; html entity hex number. e.g. 「&#x3b1;」
-     ((string-match "\\`&#x\\([0-9a-fA-F]+\\);\\'" @str) (char-to-string (string-to-number (match-string-no-properties 1 @str) 16)))
+     ((string-match "\\`&#x\\([0-9a-fA-F]+\\);\\'" Str) (char-to-string (string-to-number (match-string-no-properties 1 Str) 16)))
      ;; unicode full name. e.g. 「GREEK SMALL LETTER ALPHA」
-     ((and (string-match "\\`\\([- a-zA-Z0-9]+\\)\\'" @str)
-           (setq $charByNameResult (xah-math-input--name-to-codepoint @str)))
+     ((and (string-match "\\`\\([- a-zA-Z0-9]+\\)\\'" Str)
+           (setq $charByNameResult (xah-math-input--name-to-codepoint Str)))
       (char-to-string $charByNameResult))
      (t nil))))
 
-(defun xah-math-input--name-to-codepoint (@name)
-  "Returns integer that's the codepoint of Unicode char named @name (string).
+(defun xah-math-input--name-to-codepoint (Name)
+  "Returns integer that's the codepoint of Unicode char named Name (string).
 Version 2018-07-09"
   (interactive)
   (if (version<= "26" emacs-version)
-      (gethash @name (ucs-names))
-    (assoc-string @name (ucs-names) t)))
+      (gethash Name (ucs-names))
+    (assoc-string Name (ucs-names) t)))
 
 (defun xah-math-input-change-to-symbol (&optional print-message-when-no-match)
   "Change text selection or word to the left of cursor into a Unicode character.
