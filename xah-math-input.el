@@ -149,7 +149,7 @@ Pairs is a sequence of pairs. Each element is a sequence of 2 items, [key, value
 
   ["larr" "←"] ["uarr" "↑"] ["rarr" "→"] ["darr" "↓"] ["harr" "↔"] ["crarr" "↵"] ["lArr" "⇐"] ["uArr" "⇑"] ["rArr" "⇒"] ["dArr" "⇓"] ["hArr" "⇔"]
 
-  ["times" "×"] ["divide" "÷"] ["minus" "−"] ["lowast" "∗"] ["radic" "√"]
+  ["times" "×"] ["div" "÷"] ["divide" "÷"] ["minus" "−"] ["lowast" "∗"] ["radic" "√"]
   ["oplus" "⊕"] ["otimes" "⊗"]
   ["oslash" "ø"]
   ["fnof" "ƒ"]
