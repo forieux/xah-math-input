@@ -433,6 +433,10 @@ Pairs is a sequence of pairs. Each element is a sequence of 2 items, [key, value
   ["^)" "⁾"]
   ["^n" "ⁿ"]
   ["^i" "ⁱ"]
+  ["^T" "ᵀ"]
+  ["^H" "ᴴ"]
+  ["^t" "ᵗ"]
+  ["^h" "ʰ"]
 
   ;; subscripts
 
