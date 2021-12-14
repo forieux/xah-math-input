@@ -437,6 +437,8 @@ Pairs is a sequence of pairs. Each element is a sequence of 2 items, [key, value
   ["^H" "ᴴ"]
   ["^t" "ᵗ"]
   ["^h" "ʰ"]
+  ["^-1" "⁻¹"]
+
 
   ;; subscripts
 
