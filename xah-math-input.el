@@ -459,7 +459,6 @@ Pairs is a sequence of pairs. Each element is a sequence of 2 items, [key, value
   ["_=" "₌"]
   ["_a" "ₐ"]
   ["_e" "ₑ"]
-
   ["_h" "ₕ"]
   ["_i" "ᵢ"]
   ["_j" "ⱼ"]
@@ -476,7 +475,8 @@ Pairs is a sequence of pairs. Each element is a sequence of 2 items, [key, value
   ["_v" "ᵥ"]
   ["_x" "ₓ"]
   ["_schwa" "ₔ"]
-
+  ["_(" "₍"]
+  ["_)" "₎"]
   ])
 
 (xah-math-input--add-to-hash
