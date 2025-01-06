@@ -276,6 +276,7 @@ Pairs is a sequence of pairs. Each element is a sequence of 2 items, [key, value
 
   ["AE" "Æ"]
   ["ae" "æ"]
+  ["ae" "œ"]
 
   ["a~" "ã"] ["n~" "ñ"] ["o~" "õ"]
   ["A~" "Ã"] ["N~" "Ñ"] ["O~" "Õ"]
